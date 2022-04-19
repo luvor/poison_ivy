@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+:root{
+    --prim: #ff9800; /* primary color */
+    --sec: #1e4fe1; /* secondary color */
+    --ter: #f44336; /* tertiary color */
+    --dark: #000000; /* dark color */
+    --light: #ffffff; /* light color */
+
+    --rad: 5px; /* border-radius */
+    --pad: 80px; /* padding */
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: 300ms;
+}
+body{
+     /* TODO: раскомментируй строку ниже */
+    font-family: 'PT Sans', sans-serif;
+    background-color: var(--dark);
+}
+

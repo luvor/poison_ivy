@@ -1,5 +1,6 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import HomePage from "../views/HomePage.vue";
+import MovieAll from "../views/MovieAll.vue";
 import MovieDetail from "../views/MovieDetail.vue";
 
 const routes = [

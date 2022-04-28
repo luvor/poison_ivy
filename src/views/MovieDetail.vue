@@ -22,11 +22,15 @@
         <span class="info__label">Дата выпуска:</span> {{ movie.release_date }}
       </p>
       <p class="movie-detail__description">{{ movie.overview }}</p>
-      <p class="movie-detail__description">
+      <p class="movie-detail__genres">
         <span class="info__label">Жанры:</span>
         {{ movie.genres.map((i) => i.name).join(", ") }}
       </p>
-      <p class="movie-detail__budget">
+      <p class="movie-detail__production_countries">
+        <span class="info__label">Страны выпуска:</span>
+        {{ movie.production_countries.map((i) => i.name).join(", ") }}
+      </p>
+      <p v-if="movie.budget" class="movie-detail__budget">
         <span class="info__label">Бюджет:</span> ${{ movie.budget }}
       </p>
     </div>
@@ -48,8 +52,11 @@
   }
   &__info {
     padding: 10px;
-    max-width: 50%;
+    width: 50%;
     background: rgba($color: #000000, $alpha: 0.4);
+  }
+  &__title {
+    color: var(--light);
   }
 }
 .info {
@@ -70,6 +77,7 @@ export default {
   },
   methods: {
     async loadMovie(id) {
+      console.log(id);
       const res = await fetchMovie(id);
       this.movie = res.data;
       console.log(this.movie);
